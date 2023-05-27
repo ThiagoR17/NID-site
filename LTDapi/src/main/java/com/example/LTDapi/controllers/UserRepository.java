@@ -1,8 +1,15 @@
 package com.example.LTDapi.controllers;
 
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
 import com.example.LTDapi.controllers.model.User;
 
-public interface UserRepository extends JpaRepository<User, Long> {
-    User findBynome(String nome);
+import jakarta.persistence.Id;
+
+public interface UserRepository extends JpaRepository<User, Id> {
+    
+    User findByNome(String nome);
 
 }
